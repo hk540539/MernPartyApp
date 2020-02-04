@@ -1,11 +1,9 @@
-import React from 'react'
-import Guest from './Guest'
+import React, { useContext } from 'react';
+import Guest from './Guest';
+import GuestContext from '../context/guestContext/guestContext';
 
 const Guests = () => {
-  return (
-    <div className="guests">
-      <Guest />
-    </div>
-  )
-}
-export default Guests
+	const { guests } = useContext(GuestContext);
+	return <div className="guests">{guests.map((guest) => <Guest key={guest.id} guest={guest} />)}</div>;
+};
+export default Guests;
