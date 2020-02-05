@@ -102,6 +102,14 @@ const GuestForm = () => {
           value={editAble !== null ? "Update Guest" : "Add Guest"}
           className="btn"
         />
+        {editAble !== null ? (
+          <input
+            onClick={clearEdit}
+            type="button"
+            value="cancel"
+            className="btn clear"
+          />
+        ) : null}
       </form>
     </div>
   );
